@@ -1,6 +1,6 @@
 import 'package:advanced_project/core/helper/extension.dart';
 import 'package:advanced_project/core/routing/constant_routes.dart';
-import 'package:advanced_project/core/routing/generate_route.dart';
+
 import 'package:advanced_project/core/themeing/colors_manager.dart';
 import 'package:advanced_project/features/onboarding/widgets/icon_title_widget.dart';
 import 'package:advanced_project/features/onboarding/widgets/image_title_widget.dart';

@@ -1,6 +1,6 @@
 import 'package:advanced_project/core/routing/generate_route.dart';
 import 'package:advanced_project/core/themeing/colors_manager.dart';
-import 'package:advanced_project/features/onboarding/onboarding_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
