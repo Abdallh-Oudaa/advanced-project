@@ -12,7 +12,7 @@ class GenerateRouts {
             builder: (context) => const OnboardingScreen());
       case ConstantRoutes.loginScreen:
         return MaterialPageRoute(
-            builder: (context) => const LoginScreen());
+            builder: (context) =>  LoginScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => const Scaffold(
