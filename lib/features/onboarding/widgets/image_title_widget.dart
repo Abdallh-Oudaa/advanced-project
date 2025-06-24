@@ -38,7 +38,7 @@ class ImageTitleWidget extends StatelessWidget {
           right: 10.w,
           child: Text(
             "Best Doctor Appointment App",
-            style: TextStyleHelper.font32blueWeight700
+            style: TextStyleHelper.font32blueBold
                 .copyWith(color: ColorsManager.blueColor),textAlign: TextAlign.center,
           ),
         )

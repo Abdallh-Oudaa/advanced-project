@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/helper/text_style.dart';
+import '../../core/widgets/buttom_core.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -35,28 +36,12 @@ class OnboardingScreen extends StatelessWidget {
                         Text(
                           "Manage and schedule all of your medical appointments "
                           "easily with Docdoc to get a new experience.",
-                          style: TextStyleHelper.font15GrayWeight400,
+                          style: TextStyleHelper.font15GrayRegular,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(
-                          width: double.infinity,
-                          child: TextButton(
-                              style: ButtonStyle(
-                                  backgroundColor: WidgetStatePropertyAll(
-                                      ColorsManager.blueColor),
-                                  shape: WidgetStatePropertyAll(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadiusGeometry.circular(
-                                                  15.r)))),
-                              onPressed: () {
-                                context.pushNamed(ConstantRoutes.loginScreen);
-                              },
-                              child: Text(
-                                "Get Started",
-                                style: TextStyleHelper.font16WhiteWeight600,
-                              )),
-                        )
+                        BottomCore(iconText: "Get Started",onPressedFunc: (){
+                          context.pushNamed(ConstantRoutes.loginScreen);
+                        },),
                       ]),
                 )
               ],

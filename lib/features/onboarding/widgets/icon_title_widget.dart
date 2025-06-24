@@ -13,7 +13,7 @@ class IconTitleWidget extends StatelessWidget{
       children: [
       SvgPicture.asset("assets/svgs/onborading_docdoc_icon.svg"),
       SizedBox(width: 5.w,),
-      Text("Docdoc",style: TextStyleHelper.font32blueWeight700,),
+      Text("Docdoc",style: TextStyleHelper.font32blueBold,),
     ],);
   }
 
