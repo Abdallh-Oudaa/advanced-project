@@ -7,11 +7,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/widgets/email_regex.dart';
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
  final  formKey = GlobalKey<FormState>();
-  bool isVisible=true;
+late bool isVisible=true;
   LoginScreen({super.key});
 
   @override
