@@ -1,0 +1,52 @@
+{
+  // ====== Formatting ======
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dart.lineLength": 100,
+
+  // ====== Flutter Stylizer ======
+  "dart.flutterStylizer.organizeDirectives": true,
+  "dart.flutterStylizer.organizeFields": true,
+  "dart.flutterStylizer.sortOtherMembers": true,
+
+  // ====== Error Lens ======
+  "errorLens.enabled": true,
+  "errorLens.fontWeight": "bold",
+  "errorLens.fontStyle": "italic",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.messageEnabled": true,
+
+  // ====== Brackets ======
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+
+  // ====== Pubspec Assist ======
+  "pubspecAssist.preferDevDependencies": false,
+
+  // ====== Files ======
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ====== UI Enhancements ======
+  "editor.wordWrap": "on",                    // السطر يكمل تحته
+  "editor.minimap.enabled": true,             // يظهر minimap على اليمين
+  "editor.lineNumbers": "relative",           // يسهل التنقل
+  "editor.renderWhitespace": "boundary",      // يبين المسافات الفاضية
+  "editor.cursorBlinking": "expand",          // المؤشر أوضح
+  "editor.cursorSmoothCaretAnimation": "on",  // حركة ناعمة للمؤشر
+  "workbench.editor.highlightModifiedTabs": true, // يبين الملفات المتغيره
+  "workbench.startupEditor": "newUntitledFile"    // يفتح ملف فاضي أول ما تفتح VS Code
+}
