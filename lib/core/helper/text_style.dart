@@ -1,7 +1,9 @@
-import 'package:advanced_project/core/helper/font_weight_helper.dart';
-import 'package:advanced_project/core/themeing/colors_manager.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../themeing/colors_manager.dart';
+import 'font_weight_helper.dart';
 
 class TextStyleHelper {
   static TextStyle font32blueBold = TextStyle(

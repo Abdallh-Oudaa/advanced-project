@@ -1,7 +1,9 @@
-import 'package:advanced_project/core/helper/text_style.dart';
-import 'package:advanced_project/core/themeing/colors_manager.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../helper/text_style.dart';
+import '../themeing/colors_manager.dart';
 
 class TextFormCore extends StatelessWidget {
   final String hintText;

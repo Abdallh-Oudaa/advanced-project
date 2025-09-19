@@ -1,10 +1,12 @@
-import 'package:advanced_project/core/di/di.dart';
-import 'package:advanced_project/doc_doc.dart';
+
 import 'package:flutter/material.dart';
 
+import 'core/di/dependency_injection.dart';
+import 'doc_doc.dart';
 
-void main() {
-   configureDependencies();  
+
+void main()async {
+   await setup();
   runApp(const DocDoc());
 }
 

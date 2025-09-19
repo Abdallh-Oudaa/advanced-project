@@ -1,10 +1,11 @@
-import 'package:advanced_project/core/routing/generate_route.dart';
-import 'package:advanced_project/core/themeing/colors_manager.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/constant_routes.dart';
+import 'core/routing/generate_route.dart';
+import 'core/themeing/colors_manager.dart';
 
 class DocDoc extends StatelessWidget {
   const DocDoc({super.key});

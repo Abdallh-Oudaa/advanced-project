@@ -1,26 +1,29 @@
-import 'package:advanced_project/core/helper/text_style.dart';
-import 'package:advanced_project/core/widgets/buttom_core.dart';
-import 'package:advanced_project/core/widgets/text_form_core.dart';
+import 'package:advanced_project/features/login/logic/login_cubit.dart';
+import 'package:advanced_project/features/login/ui/widgts/bloc_listener_widget.dart';
 import 'package:advanced_project/features/login/ui/widgts/rich_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/helper/text_style.dart';
+import '../../../core/widgets/buttom_core.dart';
 import '../../../core/widgets/email_regex.dart';
+import '../../../core/widgets/text_form_core.dart';
 
-// ignore: must_be_immutable
-class LoginScreen extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
- final  formKey = GlobalKey<FormState>();
-late bool isVisible=true;
-  LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Form(
-            key: formKey,
+            key: context.read<LoginCubit>().formKey,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 40.h),
               child: Column(
@@ -41,10 +44,9 @@ late bool isVisible=true;
                     height: 10.h,
                   ),
                   TextFormCore(
-
                     keyboardType: TextInputType.emailAddress,
                     hintText: "Email",
-                    textEditingController: emailController,
+                    textEditingController: context.read<LoginCubit>().emailController,
                     validation: (text) {
                       if (text!.trim().isEmpty) {
                         return "field is empty";
@@ -60,15 +62,18 @@ late bool isVisible=true;
                     height: 20.h,
                   ),
                   TextFormCore(
-
                     suffixIcon: InkWell(
-                        onTap: (){
-                          isVisible=!isVisible;
+                        onTap: () {
+                          setState(() {
+                            context.read<LoginCubit>().isVisible = !context.read<LoginCubit>().isVisible;
+                          });
                         },
-                        child: Icon(isVisible?Icons.visibility:Icons.visibility_off)),
+                        child: Icon(   context.read<LoginCubit>().isVisible
+                            ? Icons.visibility_off
+                            : Icons.visibility)),
                     keyboardType: TextInputType.visiblePassword,
                     hintText: "Password",
-                    textEditingController: passwordController,
+                    textEditingController:    context.read<LoginCubit>().passwordController,
                     validation: (text) {
                       if (text!.trim().isEmpty) {
                         return "field is empty";
@@ -79,19 +84,29 @@ late bool isVisible=true;
 
                       return null;
                     },
-                    isObscure: isVisible,
+                    isObscure:    context.read<LoginCubit>().isVisible,
                   ),
                   SizedBox(
                     height: 20.h,
                   ),
-                  BottomCore(iconText: "create account", onPressedFunc: () {}),
-                  SizedBox(height: 20.h,),
+                  BottomCore(iconText: "login", onPressedFunc: () {
+                    isValid(context);
+                  }),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   const RichTextWidget(),
+                  BlocListenerWidget(),
                 ],
-
               ),
             )),
       ),
     );
+  }
+
+  void isValid(BuildContext context) {
+    if(context.read<LoginCubit>().formKey.currentState?.validate()!=false){
+      context.read<LoginCubit>().emitLoginState();
+    }
   }
 }

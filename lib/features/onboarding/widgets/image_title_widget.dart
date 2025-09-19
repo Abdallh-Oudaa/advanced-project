@@ -1,8 +1,9 @@
-import 'package:advanced_project/core/themeing/colors_manager.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helper/text_style.dart';
+import '../../../core/themeing/colors_manager.dart';
 
 class ImageTitleWidget extends StatelessWidget {
   const ImageTitleWidget({super.key});

@@ -1,12 +1,13 @@
-import 'package:advanced_project/core/helper/extension.dart';
-import 'package:advanced_project/core/routing/constant_routes.dart';
 
+import 'package:advanced_project/core/helper/extension.dart';
 import 'package:advanced_project/features/onboarding/widgets/icon_title_widget.dart';
 import 'package:advanced_project/features/onboarding/widgets/image_title_widget.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/helper/text_style.dart';
+import '../../core/routing/constant_routes.dart';
 import '../../core/widgets/buttom_core.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class OnboardingScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         BottomCore(iconText: "Get Started",onPressedFunc: (){
-                          context.pushNamed(ConstantRoutes.loginScreen);
+                          context.pushNamed(ConstantRoutes.signUpScreen);
                         },),
                       ]),
                 )
