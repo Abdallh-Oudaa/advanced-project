@@ -3,13 +3,13 @@ import 'package:advanced_project/core/helper/text_style.dart';
 
 
 import 'package:advanced_project/features/signUp/logic/sign_up_cubit.dart';
-import 'package:advanced_project/features/signUp/logic/sign_up_state.dart';
 import 'package:advanced_project/features/signUp/ui/local_widgets/sign_up_section.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/routing/constant_routes.dart';
+import '../../login/logic/login_state.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -20,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
         listenWhen: (previous, current) =>
         current is Loading || current is Success || current is Error,
         listener: (context, state) {
-          state.whenOrNull(loading: () {
+          state?.whenOrNull(loading: () {
             return const AlertDialog(
 
                 title: Text("Loading"),
