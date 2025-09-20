@@ -1,34 +1,33 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'login_response.g.dart';
 @JsonSerializable()
 class LoginResponse {
   LoginResponse({
       this.message, 
-      this.userInfo,
+      this.data, 
       this.status, 
       this.code,});
-
+factory LoginResponse.fromJson(Map<String,dynamic> data)=>_$LoginResponseFromJson(data);
 
   String? message;
-  @JsonKey(name: "data")
-  UserInfo? userInfo;
+  Data? data;
   bool? status;
   int? code;
 
-factory LoginResponse.fromJson(Map<String,dynamic> json)=>_$LoginResponseFromJson(json);
+
 
 }
 @JsonSerializable()
-class UserInfo {
-  UserInfo({
+class Data {
+  Data({
       this.token, 
       this.userName,});
-
+factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
   String? token;
-  @JsonKey(name: "username")
+@JsonKey(name: "username")
   String? userName;
-  factory UserInfo.fromJson(Map<String,dynamic> json)=>_$UserInfoFromJson(json);
 
 
 

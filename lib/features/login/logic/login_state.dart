@@ -1,11 +1,12 @@
-import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'login_state.freezed.dart';
-@freezed
-sealed class LoginState<T> with _$LoginState<T> {
-  const factory LoginState.initial() = _Initial;
 
-  const factory LoginState.success(T data) = Success<T>;
-  const factory LoginState.loading() = Loading;
-  const factory LoginState.error(String? message) = Error;
+part 'login_state.freezed.dart';
+@Freezed()
+class LoginState<T> with _$LoginState<T>{
+  factory LoginState.initial()=_Initial;
+  factory LoginState.loading()=Loading;
+
+  factory LoginState.success(T data)=Success;
+  factory LoginState.error(String message)=Error;
+
 }

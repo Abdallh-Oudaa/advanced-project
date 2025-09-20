@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
 extension NavigatorEnxtension on BuildContext{
-  pushNamed(String routName,{Object? arguments}){
+  Future<Object?> pushNamed(String routName,{Object? arguments}){
     return Navigator.pushNamed(this, routName);
   }
-  pushReplacementNamed(String routName,{Object? arguments}){
+  Future<Object?> pushReplacementNamed(String routName,{Object? arguments}){
     return Navigator.pushReplacementNamed(this, routName);
   }
-  pop(){
+  void pop(){
     return Navigator.pop(this);
   }
 }
