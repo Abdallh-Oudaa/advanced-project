@@ -33,7 +33,7 @@ class RichTextWidget extends StatelessWidget {
                       .copyWith(color: Colors.black)),
             ]),
           ),
-          SizedBox(height: 20.h,),
+            SizedBox(height: 20.h,),
           RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: [
