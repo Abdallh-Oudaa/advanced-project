@@ -14,12 +14,17 @@ class SignUpListenerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpStates>(
       listenWhen: (previous, current) =>
-      current is Success || current is Loading || current is Error,
+          current is Success || current is Loading || current is Error,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => Center(
-            child: CircularProgressIndicator(),
-          ),
+          loading: () {
+            showDialog(
+              context: context,
+              builder: (context) => Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          },
           success: (data) {
             context.pop();
             context.pushReplacementNamed(ConstantRoutes.loginScreen);
@@ -49,7 +54,6 @@ class SignUpListenerWidget extends StatelessWidget {
               );
             },
           ),
-
         );
       },
       child: SizedBox.shrink(),

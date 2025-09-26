@@ -47,6 +47,13 @@
   "editor.renderWhitespace": "boundary",      // يبين المسافات الفاضية
   "editor.cursorBlinking": "expand",          // المؤشر أوضح
   "editor.cursorSmoothCaretAnimation": "on",  // حركة ناعمة للمؤشر
-  "workbench.editor.highlightModifiedTabs": true, // يبين الملفات المتغيره
-  "workbench.startupEditor": "newUntitledFile"    // يفتح ملف فاضي أول ما تفتح VS Code
+  "workbench.editor.highlightModifiedTabs": true,
+  "files.exclude": {
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  }//لمغير
+
 }
