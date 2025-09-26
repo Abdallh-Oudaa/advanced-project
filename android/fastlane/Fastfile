@@ -1,0 +1,18 @@
+default_platform(:android)
+
+platform :android do
+  desc "distrbute app to firebase distribution"
+  lane :distrbute do
+    sh "flutter clean"
+    sh "flutter build apk --flavor prod -t lib/main_prod.dart --release"
+    firebase_app_distribution(
+        app:"1:148780883357:android:887d52b91bdc5b8e3be374",
+  firebase_cli_token:dotenv.env["firebase_cli_token"]
+android_artifact_type:"APK",
+android_artifact_path:"../build/app/outputs/flutter-apk/app-prod-release.apk",
+release_notes:"uplode second version about this app by using fastlane",
+testers:"bnaoda18@gmail.com",
+    )
+
+  end
+end
